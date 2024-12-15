@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daruma Izakaya Restaurant 居酒屋 | Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Nunito, sans-serif;
+        background-color: #efe0ca;
+        text-transform: uppercase;
+      }
+
+      header {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      header img {
+        position: relative;
+        width: 47.7rem;
+        border-radius: 10px;
+      }
+
+      header nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      #menu,
+      #order-form {
+        border: 3px solid red;
+      }
+
+      .menu-border-outer {
+        border: 2px solid #000;
+        border-radius: 10px;
+      }
+
+      .menu-border-middle {
+        border: 2px dotted #000;
+        border-radius: 10px;
+      }
+
+      .menu-border-inner {
+        border: 2px solid #000;
+        border-radius: 10px;
+      }
+
+      .menu-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 10px;
+        background-color: #efe0ca;
+      }
+
+      .menu-header {
+        text-align: space-between;
+        background: black;
+        color: #efe0ca;
+        padding: 10px;
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        height: 130px;
+      }
+
+      .menu-header-container {
+        display: inline-block;
+      }
+
+      .menu-subheader {
+        text-align: center;
+        font-size: 50px;
+        color: #efe0ca;
+        letter-spacing: 0.3rem;
+        text-decoration: 3px underline dashed;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        border: 2px solid #000;
+        padding: 10px;
+        text-align: left;
+      }
+
+      td {
+        font-size: 16px;
+      }
+
+      .sticker {
+        position: absolute;
+        transform: rotate(25deg);
+        top: 25px;
+        right: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #333;
+        background: #efe0ca;
+        padding: 5px 10px;
+        box-shadow: 3px 5px 0px black;
+      }
+      /* ・・・・・・・・・・・・・・・・・・・・　SAKE MENU STYLE ・・・・・・・・・・・・・・・・・・・・ */
+      .sake-menu {
+        margin-top: 40px;
+        border: 4px solid #000;
+        width: 500px;
+        padding: 20px;
+        display: flex;
+        gap: 70px;
+      }
+
+      .price {
+        color: black;
+      }
+
+      .price h3 {
+        margin: 5px 0;
+        font-weight: 800;
+        font-size: 20px;
+      }
+
+      .price p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .price > p > span {
+        color: rgb(255, 38, 0);
+        font-weight: 900;
+      }
+
+      .description {
+        margin: 10px 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+        line-height: 1.5;
+      }
+
+      .additional-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .info-item {
+        align-items: end;
+      }
+
+      .bottle-image {
+        text-align: right;
+        margin-top: 15px;
+      }
+
+      .bottle-image img {
+        max-width: 100px;
+        height: auto;
+      }
+
+      #beverage-info {
+        text-align: left;
+      }
+
+      @font-face {
+        font-family: "Makaro-Regular";
+        src: url("./fonts/Makaro-Regular.otf") format("otf");
+      }
+
+      @font-face {
+        font-family: "大正活字っぽいフォントT5";
+        src: url("./fonts/taisyokatujippoi7T5.ttf") format("truetype");
+      }
+
+      #semi-sweet,
+      #sweet {
+        color: red;
+      }
+
+      .kanji {
+        font-family: "大正活字っぽいフォントT5", sans-serif;
+        font-size: 20px;
+      }
+
+      #price-container {
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+      }
+
+      #price-container > img {
+        width: auto;
+        height: 40.6px;
+      }
+
+      footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header-img">
+      <img
+        src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1bb64f87803097.5dc96f4de1e44.jpeg"
+        alt="Daruma Izakaya Restaurant"
+      />
+      <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 50px">
+        Daruma Izakaya Restaurant
+      </h1>
+      <nav>
+        <h2 id="menu">Menu</h2>
+        <h2 id="order-form">Order Now</h2>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2
+          style="
+            font-size: 50px;
+            text-align: center;
+            font-weight: 900;
+            font-family: Arial, Helvetica, sans-serif;
+          "
+        >
+          Menu <br />メニュー
+        </h2>
+        <div class="menu-border-outer">
+          <div class="menu-border-middle">
+            <div class="menu-border-inner">
+              <div class="menu-container">
+                <div
+                  class="menu-header-container"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <div class="menu-header" style="width: 60%">
+                    <span style="border: 2px solid red">おつまみ</span>
+                    <span style="background-color: #efe0ca; color: black"
+                      >小盆</span
+                    >
+                    <div class="menu-subheader">SMALL PLATES</div>
+                  </div>
+                  <div
+                    class="menu-image"
+                    style="
+                      width: 40%;
+                      height: 150px;
+                      background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1bb64f87803097.5dc96f4de1e44.jpeg);
+                      background-size: cover;
+                      background-repeat: no-repeat;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <article>
+                <table id="food">
+                  <tbody>
+                    <tr>
+                      <td>28</td>
+                      <td>枝豆</td>
+                      <td style="font-weight: 700">毛豆</td>
+                      <td>EDAMAME W/</td>
+                    </tr>
+                    <tr>
+                      <td>28</td>
+                      <td>銀杏</td>
+                      <td style="font-weight: 700">盐烤银杏</td>
+                      <td>ROASTED GINGKO NUTS</td>
+                    </tr>
+                    <tr>
+                      <td>38</td>
+                      <td>鶏皮ボン酢</td>
+                      <td style="font-weight: 700">柚子醋鸡皮</td>
+                      <td>CHICKEN SKIN W/ PONZU VINEGAR</td>
+                    </tr>
+                    <tr>
+                      <td>38</td>
+                      <td>チーズの西京漬け</td>
+                      <td style="font-weight: 700">自制味曾芝士</td>
+                      <td>CREAM CHEESE W/ MISO</td>
+                    </tr>
+                    <tr>
+                      <td>48</td>
+                      <td>トマトのしらす大葉和え</td>
+                      <td style="font-weight: 700">紫苏番茄配银鱼</td>
+                      <td>TOMATO W/ SEASAME & SEA SALT</td>
+                    </tr>
+                    <tr>
+                      <td>28</td>
+                      <td>ごま塩キャベツ</td>
+                      <td style="font-weight: 700">芝麻海盐卷心菜</td>
+                      <td>SPINACH W/ SEASAME & SEA SALT</td>
+                    </tr>
+                    <tr>
+                      <td>48</td>
+                      <td>地鶏つくねスープ</td>
+                      <td style="font-weight: 700">地鸡肉丸汤</td>
+                      <td>HOMEMADE CHICKEN BROTH</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <div class="sticker">
+                The Classic!<br /><span style="font-weight: 900">EDAMAME</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ・・・・・・・・・・・・・・・・・・・・　SAKE MENU ・・・・・・・・・・・・・・・・・・・・-->
+        <article>
+          <div class="sake-menu">
+            <div class="info-item">
+              <h1
+                style="
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 2rem;
+                  color: rgb(255, 38, 0);
+                  font-weight: 900;
+                  margin: 0;
+                  padding: 0;
+                "
+              >
+                emishiki monsoon
+              </h1>
+              <p
+                style="
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                  margin: 0;
+                "
+              >
+                笑四季 貴醸原酒
+              </p>
+              <div class="price">
+                <h3>Ginfubuki</h3>
+                <div id="price-container">
+                  <img src="./img/Layer 2.png" alt="Small Bottle Image" />
+                  <div class="info-item-price">
+                    <p>Glass /杯 - <span>68 RMB</span></p>
+                    <p>720ML - <span>698 RMB</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Rich profile packed with notes of vanilla and chocolate within
+                  a resounding but clean sweetness.<br />液郁的百花香气和水果香气融合、微酸甜美。
+                </p>
+              </div>
+              <div class="additional-info">
+                <table id="beverage-info">
+                  <tb>
+                    <tr class="kanji">
+                      <th scope="col">精米歩合</th>
+                      <th scope="col">口味</th>
+                      <th id="sweet" scope="col">甘</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">flavor ratio</th>
+                      <th scope="col">flavor profile</th>
+                      <th id="semi-sweet" scope="col">semi sweet</th>
+                    </tr>
+                    <tr>
+                      <th
+                        class="kanji"
+                        id="sweet"
+                        style="font-size: 30px"
+                        scope="col"
+                      >
+                        50%
+                      </th>
+                    </tr>
+                  </tb>
+                </table>
+              </div>
+            </div>
+            <div class="bottle-image">
+              <img src="./img/Layer 1.png" alt="Bottle Image" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="sake-menu">
+            <div class="info-item">
+              <h1
+                style="
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 2rem;
+                  color: rgb(255, 38, 0);
+                  font-weight: 900;
+                  margin: 0;
+                  padding: 0;
+                "
+              >
+                emishiki monsoon
+              </h1>
+              <p
+                style="
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                  margin: 0;
+                "
+              >
+                笑四季 貴醸原酒
+              </p>
+              <div class="price">
+                <h3>Ginfubuki</h3>
+                <div id="price-container">
+                  <img src="./img/Layer 2.png" alt="Small Bottle Image" />
+                  <div class="info-item-price">
+                    <p>Glass /杯 - <span>68 RMB</span></p>
+                    <p>720ML - <span>698 RMB</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Rich profile packed with notes of vanilla and chocolate within
+                  a resounding but clean sweetness.<br />液郁的百花香气和水果香气融合、微酸甜美。
+                </p>
+              </div>
+              <div class="additional-info">
+                <table id="beverage-info">
+                  <tb>
+                    <tr class="kanji">
+                      <th scope="col">精米歩合</th>
+                      <th scope="col">口味</th>
+                      <th id="sweet" scope="col">甘</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">flavor ratio</th>
+                      <th scope="col">flavor profile</th>
+                      <th id="semi-sweet" scope="col">semi sweet</th>
+                    </tr>
+                    <tr>
+                      <th
+                        class="kanji"
+                        id="sweet"
+                        style="font-size: 30px"
+                        scope="col"
+                      >
+                        50%
+                      </th>
+                    </tr>
+                  </tb>
+                </table>
+              </div>
+            </div>
+            <div class="bottle-image">
+              <img src="./img/Layer 1.png" alt="Bottle Image" />
+            </div>
+          </div>
+        </article>
+      </section>
+      <section style="margin-top: 70px">
+        <h2
+          style="
+            font-size: 50px;
+            text-align: center;
+            font-weight: 900;
+            font-family: Arial, Helvetica, sans-serif;
+          "
+        >
+          Place Your Order <br />ご注文ください
+        </h2>
+        <form
+          id="orderForm"
+          action="#"
+          method="post"
+          style="
+            margin: 0;
+            padding: 40px;
+            border: 4px dashed black;
+            border-radius: 20px;
+          "
+        >
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="edamame"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >EDAMAME</span
+              ><br />
+              枝豆</label
+            >
+            <input
+              type="number"
+              id="edamame"
+              name="edamame"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="roaster-gingko-nuts"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >roasted gincko nuts</span
+              ><br />
+              銀杏</label
+            >
+            <input
+              type="number"
+              id="roaster-gingko-nuts"
+              name="roaster-gingko-nuts"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                margin-bottom: 10px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="chicken"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >chicken skin w/ ponzu vinegar</span
+              ><br />
+              鶏皮ボン酢</label
+            >
+            <input
+              type="number"
+              id="chicken"
+              name="chicken"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                margin-bottom: 10px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="cream"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >cream cheese w/ miso</span
+              ><br />
+              チーズの西京漬け</label
+            >
+            <input
+              type="number"
+              id="cream"
+              name="cream"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                margin-bottom: 10px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="tomato"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >tomato w/ ponzu and crispy fish</span
+              ><br />
+              トマトのしらす大葉和え</label
+            >
+            <input
+              type="number"
+              id="tomato"
+              name="tomato"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                margin-bottom: 10px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="spinach"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >spinach w/ seasame & sea salt</span
+              ><br />
+              ごま塩キャベツ</label
+            >
+            <input
+              type="number"
+              id="spinach"
+              name="spinach"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                margin-bottom: 10px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <div
+            style="
+              justify-content: space-between;
+              display: flex;
+              text-align: center;
+              align-items: center;
+            "
+          >
+            <label
+              for="homemade"
+              style="font-weight: 700; font-size: 16px; text-align: left"
+              ><span
+                style="
+                  color: red;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 20px;
+                "
+                >homemade chicken broth</span
+              ><br />
+              地鶏つくねスープ</label
+            >
+            <input
+              type="number"
+              id="homemade"
+              name="homemade"
+              min="0"
+              value="0"
+              style="
+                width: 2em;
+                padding: 8px;
+                margin-bottom: 10px;
+                color: red;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 大正活字っぽいフォントT5;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 6px;
+              "
+            />
+          </div>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              overflow: visible;
+              text-align: center;
+              height: 5px;
+            "
+          />
+          <fieldset
+            style="
+              margin: 30px 0 30px;
+              border: 0;
+              font-size: 20px;
+              font-family: Arial, Helvetica, sans-serif;
+              align-items: center;
+              padding: 0;
+              font-weight: 600;
+            "
+          >
+            <legend
+              style="
+                font-family: Arial, Helvetica, sans-serif;
+                color: red;
+                font-weight: 700;
+                font-size: 25px;
+                border: 2px solid red;
+                margin-bottom: 20px;
+              "
+            >
+              Side dishes
+            </legend>
+            <label for="rice" style="display: block">
+              <input type="checkbox" name="sides" value="rice" />
+              Steamed Rice
+            </label>
+            <label for="miso" style="display: block">
+              <input type="checkbox" name="sides" value="miso" /> Miso Soup
+            </label>
+            <label style="display: block">
+              <input type="checkbox" name="sides" value="salad" /> Side Salad
+            </label>
+          </fieldset>
+          <fieldset
+            style="
+              margin: 10px 0 5px;
+              border: 0;
+              padding: 0;
+              font-size: 20px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: 600;
+              margin-bottom: 30px;
+            "
+          >
+            <legend
+              style="
+                font-family: Arial, Helvetica, sans-serif;
+                color: red;
+                font-weight: 700;
+                font-size: 25px;
+                border: 2px solid red;
+                margin-bottom: 20px;
+              "
+            >
+              Add-ons
+            </legend>
+            <label style="display: block">
+              <input type="radio" name="addon" value="egg" /> Soft-Boiled Egg
+              (+¥12)
+            </label>
+            <label style="display: block">
+              <input type="radio" name="addon" value="extra_meat" /> Extra Meat
+              (+¥25)
+            </label>
+          </fieldset>
+          <hr
+            style="
+              border: none;
+              border-top: 3px solid #333;
+              color: #333;
+              margin-bottom: 30px;
+            "
+          />
+          <div style="margin: 10px 0 5px">
+            <label
+              for="specialRequests"
+              style="
+                display: block;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 10px;
+              "
+              >Special Requests:</label
+            >
+            <textarea
+              id="specialRequests"
+              name="specialRequests"
+              rows="4"
+              placeholder="Any special instructions for the chef?"
+              style="
+                width: 96.5%;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #efe0ca;
+                border: 2px dashed black;
+                border-radius: 10px;
+              "
+            ></textarea>
+          </div>
+          <input
+            type="submit"
+            value="Go To Checkout"
+            style="
+              width: 100%;
+              padding: 15px;
+              margin-bottom: 10px;
+              border: 3px solid black;
+              border-radius: 8px;
+              background-color: #efe0ca;
+              font-size: 20px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: 600;
+            "
+          />
+        </form>
+      </section>
+    </main>
+    <footer style="margin-top: 100px; margin-bottom: 10px">
+      <p>
+        Made with love by
+        <span style="font-weight: 900">Solo</span>
+      </p>
+    </footer>
+  </body>
+</html>
